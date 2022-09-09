@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game/Scenes/Ground/Ground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Scenes/UI/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Scenes/World/Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Scenes/World/World.gd" type="Script" id=5]
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 0.96
+glow_strength = 0.57
+glow_bloom = 0.41
+glow_blend_mode = 0
+glow_hdr_threshold = 1.14
+
+[node name="World" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Camera" parent="." instance=ExtResource( 3 )]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UI" instance=ExtResource( 2 )]
+
+[node name="Star" parent="UI/UI" index="1"]
+margin_left = -112.0
+margin_top = -112.0
+
+[node name="LevelNumber" parent="UI/UI" index="6"]
+margin_left = -276.0
+margin_top = -87.0
+margin_right = -123.0
+margin_bottom = -32.0
+
+[node name="Ground" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -131070, 7, 0, -131069, 7, 0, -131068, 7, 0, -65535, 7, 0, -65534, 7, 0, -65533, 7, 0, 65533, 7, 0, 65534, 7, 0, 65535, 7, 0, 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 131068, 7, 0, 131069, 7, 0, 131070, 7, 0, 131071, 7, 0, 65536, 9, 0, 65537, 9, 0, 65538, 9, 0, 65539, 7, 0, 65540, 7, 0, 65541, 7, 0, 196603, 7, 0, 196604, 7, 0, 196605, 7, 0, 196606, 7, 0, 196607, 7, 0, 131072, 9, 0, 131073, 9, 0, 131074, 9, 0, 131075, 7, 0, 131076, 7, 0, 131077, 7, 0, 262138, 7, 0, 262139, 7, 0, 262140, 7, 0, 262141, 7, 0, 262142, 7, 0, 262143, 7, 0, 196608, 9, 0, 196609, 9, 0, 196610, 9, 0, 196611, 7, 0, 196612, 7, 0, 196613, 7, 0, 327673, 7, 0, 327674, 7, 0, 327675, 7, 0, 327676, 7, 0, 327677, 7, 0, 327678, 7, 0, 327679, 7, 0, 262144, 7, 0, 262145, 7, 0, 262146, 7, 0, 262147, 7, 0, 262148, 7, 0, 393210, 7, 0, 393211, 7, 0, 393212, 7, 0, 393213, 7, 0, 393214, 7, 0, 393215, 7, 0, 327680, 7, 0, 327681, 7, 0, 327682, 7, 0, 327683, 7, 0, 327684, 7, 0, 458748, 7, 0, 458751, 7, 0, 393216, 7, 0, 393217, 7, 0, 393218, 7, 0, 393219, 7, 0, 524287, 7, 0, 458752, 7, 0, 458753, 7, 0, 458754, 7, 0, 524288, 7, 0, 524289, 7, 0, 524290, 7, 0, 589825, 7, 0 )
+
+[node name="Robot" parent="Ground/Objects" index="0"]
+position = Vector2( 103, 157 )
+
+[node name="Player" parent="Ground/Objects" index="1"]
+position = Vector2( 233, 166 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.67451, 0.67451, 0.67451, 1 )
+
+[connection signal="completed" from="Ground" to="." method="_on_Ground_completed"]
+[connection signal="is_dance_mode_changed" from="Ground" to="." method="_on_Ground_is_dance_mode_changed"]
+[connection signal="level_number_changed" from="Ground" to="." method="_on_Ground_level_number_changed"]
+[connection signal="current_move_index_updated" from="Ground/Objects/Robot" to="UI/UI/RobotMoves" method="_on_Robot_current_move_index_updated"]
+[connection signal="exit_reached" from="Ground/Objects/Robot" to="Ground" method="_on_Robot_exit_reached"]
+[connection signal="moves_updated" from="Ground/Objects/Robot" to="UI/UI/RobotMoves" method="_on_Robot_moves_updated"]
+
+[editable path="UI/UI"]
+[editable path="UI/UI/SfxOption"]
+[editable path="UI/UI/MusicOption"]
+[editable path="UI/UI/Help"]
+[editable path="Ground"]

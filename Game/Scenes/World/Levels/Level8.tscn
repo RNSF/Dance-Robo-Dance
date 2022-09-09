@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Scenes/World/World.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Dancer/Dancer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Scenes/GroundObjects/Block/BlockSpawner.tscn" type="PackedScene" id=3]
+
+[node name="Level8" instance=ExtResource( 1 )]
+level = 8
+
+[node name="Ground" parent="." index="2"]
+tile_data = PoolIntArray( -262147, 5, 0, -262146, 5, 1, -262145, 5, 1, -327680, 5, 1, -327679, 5, 2, -196611, 5, 131072, -196610, 5, 131073, -196609, 5, 131073, -262144, 5, 131073, -262143, 5, 131074, -131078, 7, 0, -131077, 7, 0, -131076, 7, 0, -131075, 7, 0, -131074, 7, 0, -131073, 7, 0, -196608, 7, 0, -196607, 7, 0, -196606, 7, 0, -196605, 7, 0, -65542, 7, 0, -65541, 7, 0, -65540, 7, 0, -65539, 7, 0, -65538, 7, 0, -131072, 7, 0, -131071, 7, 0, -131070, 7, 0, -131069, 7, 0, -131068, 7, 0, -131067, 7, 0, -131066, 7, 0, -5, 7, 0, -4, 7, 0, -3, 7, 0, -2, 7, 0, -1, 7, 0, -65536, 7, 0, -65535, 7, 0, -65534, 7, 0, -65533, 7, 0, -65532, 7, 0, -65531, 7, 0, -65530, 7, 0, -65529, 5, 0, -65528, 5, 2, 65530, 7, 0, 65531, 7, 0, 65532, 7, 0, 65533, 7, 0, 65534, 7, 0, 65535, 7, 0, 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 5, 65536, 8, 5, 65538, 131066, 7, 0, 131067, 14, 0, 131068, 7, 0, 131069, 7, 0, 131070, 7, 0, 131071, 7, 0, 65536, 7, 0, 65537, 7, 0, 65538, 7, 0, 65539, 7, 0, 65540, 7, 0, 65541, 7, 0, 65542, 7, 0, 65543, 5, 131072, 65544, 5, 131074, 196602, 7, 0, 196603, 7, 0, 196604, 7, 0, 196605, 7, 0, 196606, 7, 0, 196607, 7, 0, 131072, 7, 0, 131073, 7, 0, 131074, 7, 0, 131075, 7, 0, 131076, 7, 0, 131077, 7, 0, 131078, 7, 0, 262139, 7, 0, 262140, 7, 0, 262141, 7, 0, 262142, 7, 0, 262143, 7, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0, 196611, 7, 0, 196612, 7, 0, 196613, 7, 0, 196614, 7, 0 )
+
+[node name="Robot" parent="Ground/Objects" index="0"]
+position = Vector2( 759, 41 )
+moves = [ Vector2( -1, 0 ), Vector2( 0, -1 ), Vector2( -1, 0 ), Vector2( 0, 1 ) ]
+
+[node name="Player" parent="Ground/Objects" index="1"]
+position = Vector2( 863, 142 )
+
+[node name="Dancer" parent="Ground/Objects" index="2" instance=ExtResource( 2 )]
+position = Vector2( -129, 146 )
+
+[node name="Dancer2" parent="Ground/Objects" index="3" instance=ExtResource( 2 )]
+position = Vector2( 51, 243 )
+
+[node name="Dancer4" parent="Ground/Objects" index="4" instance=ExtResource( 2 )]
+position = Vector2( 651, -140 )
+
+[node name="Dancer6" parent="Ground/Objects" index="5" instance=ExtResource( 2 )]
+position = Vector2( 148, -42 )
+
+[node name="Dancer3" parent="Ground/Objects" index="6" instance=ExtResource( 2 )]
+position = Vector2( 47, 50 )
+
+[node name="BlockSpawner2" parent="Ground/Objects" index="7" instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0 )
+
+[node name="BlockSpawner3" parent="Ground/Objects" index="8" instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 131073, 0, 0, 131074, 0, 0, 131075, 0, 0 )
+
+[editable path="UI/UI"]
+[editable path="Ground"]

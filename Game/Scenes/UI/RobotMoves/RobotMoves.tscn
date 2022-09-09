@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Scenes/UI/RobotMoves/RobotMoves.gd" type="Script" id=1]
+[ext_resource path="res://Game/Scenes/UI/RobotMoves/RobotMove/RobotMove.tscn" type="PackedScene" id=2]
+
+[node name="RobotMoves" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+robot_move_scene = ExtResource( 2 )

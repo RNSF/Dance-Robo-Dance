@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/AnimateObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Robot/Robot.gd" type="Script" id=2]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Dancer/DeadDancer/DeadDancer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Robot/Sound/Clap.wav" type="AudioStream" id=5]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Robot/Sound/Clav.wav" type="AudioStream" id=6]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Robot/Sound/Hihat.wav" type="AudioStream" id=7]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Robot/Sound/Snare.wav" type="AudioStream" id=8]
+[ext_resource path="res://Game/Scenes/Sound.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.00127877, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.449561 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.00857143, 0.617143, 0.817143 )
+colors = PoolColorArray( 0.466667, 0.0823529, 0.658824, 1, 0.466667, 0.0823529, 0.658824, 1, 0.466667, 0.0823529, 0.658824, 0 )
+
+[node name="Robot" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+move_time = 0.3
+type_id = "Robot"
+pushable_by = [ "Player" ]
+dead_robot_scene = ExtResource( 4 )
+
+[node name="DanceSprite" parent="Sprites" index="0"]
+self_modulate = Color( 1, 0.827451, 0.729412, 1 )
+
+[node name="Move" type="Sprite" parent="Sprites" index="1"]
+self_modulate = Color( 0.0666667, 0, 0.305882, 1 )
+position = Vector2( 0, -30 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Sound" parent="." index="4" instance=ExtResource( 9 )]
+
+[node name="DanceUp" type="AudioStreamPlayer" parent="Sound" index="0"]
+stream = ExtResource( 5 )
+volume_db = -10.0
+bus = "SFX"
+
+[node name="DanceDown" type="AudioStreamPlayer" parent="Sound" index="1"]
+stream = ExtResource( 6 )
+volume_db = -10.0
+bus = "SFX"
+
+[node name="DanceLeft" type="AudioStreamPlayer" parent="Sound" index="2"]
+stream = ExtResource( 7 )
+volume_db = -15.0
+bus = "SFX"
+
+[node name="DanceRight" type="AudioStreamPlayer" parent="Sound" index="3"]
+stream = ExtResource( 8 )
+volume_db = -8.0
+bus = "SFX"
+
+[node name="ConfettiParticle" type="CPUParticles2D" parent="." index="6"]
+position = Vector2( 0, -10 )
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 0.6
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2( 0, -1 )
+spread = 40.0
+gravity = Vector2( 0, 400 )
+initial_velocity = 258.71
+initial_velocity_random = 0.11
+linear_accel = -15.92
+damping = 99.5
+angle = 360.0
+angle_random = 1.0
+scale_amount = 10.0
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

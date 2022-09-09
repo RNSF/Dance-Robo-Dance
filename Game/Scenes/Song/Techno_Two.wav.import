@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Techno_Two.wav-9929b82eaf4ae4d3ab82efc7822651f6.sample"
+
+[deps]
+
+source_file="res://Game/Scenes/Song/Techno_Two.wav"
+dest_files=[ "res://.import/Techno_Two.wav-9929b82eaf4ae4d3ab82efc7822651f6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

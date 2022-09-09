@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Snare.wav-80b8121b290e9bb39f77a4f51e45db00.sample"
+
+[deps]
+
+source_file="res://Game/Scenes/GroundObjects/AnimateObjects/Robot/Sound/Snare.wav"
+dest_files=[ "res://.import/Snare.wav-80b8121b290e9bb39f77a4f51e45db00.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

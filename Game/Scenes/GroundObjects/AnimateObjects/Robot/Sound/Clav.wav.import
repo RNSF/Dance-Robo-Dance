@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Clav.wav-ad37b5718120ff2a6ff829a9bd5046ec.sample"
+
+[deps]
+
+source_file="res://Game/Scenes/GroundObjects/AnimateObjects/Robot/Sound/Clav.wav"
+dest_files=[ "res://.import/Clav.wav-ad37b5718120ff2a6ff829a9bd5046ec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

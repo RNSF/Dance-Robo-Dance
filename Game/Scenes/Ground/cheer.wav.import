@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cheer.wav-b02c72353f059aa03ee49e4397fd471c.sample"
+
+[deps]
+
+source_file="res://Game/Scenes/Ground/cheer.wav"
+dest_files=[ "res://.import/cheer.wav-b02c72353f059aa03ee49e4397fd471c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

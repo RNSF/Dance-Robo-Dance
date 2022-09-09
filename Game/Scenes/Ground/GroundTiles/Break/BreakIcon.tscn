@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Scenes/Ground/GroundTiles/Break/BreakIcon.gd" type="Script" id=1]
+[ext_resource path="res://Game/Scenes/UI/RobotMoves/RobotMove/arrowUp.png" type="Texture" id=2]
+
+[node name="BreakIcon" type="Sprite"]
+self_modulate = Color( 0.184314, 0.0352941, 0.294118, 1 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+cell_type = "Break Down"

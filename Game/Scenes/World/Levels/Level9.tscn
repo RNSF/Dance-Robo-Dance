@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Scenes/World/World.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Dancer/Dancer.tscn" type="PackedScene" id=2]
+
+[node name="Level9" instance=ExtResource( 1 )]
+level = 9
+
+[node name="Ground" parent="." index="2"]
+tile_data = PoolIntArray( -131068, 7, 0, -131067, 7, 0, -131066, 14, 0, -65533, 7, 0, -65532, 7, 0, -65531, 7, 0, -65530, 7, 0, 65529, 5, 0, 65530, 5, 1, 65531, 5, 2, 65532, 7, 0, 65533, 7, 0, 65534, 7, 0, 65535, 7, 0, 0, 7, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 131065, 5, 65536, 131066, 5, 65537, 131067, 5, 65538, 131068, 7, 0, 131069, 7, 0, 131070, 7, 0, 131071, 7, 0, 65536, 7, 0, 65537, 11, 0, 65538, 11, 0, 65539, 11, 0, 65540, 7, 0, 65541, 7, 0, 196601, 5, 131072, 196602, 5, 131073, 196603, 5, 131074, 196604, 7, 0, 196605, 7, 0, 196606, 7, 0, 196607, 7, 0, 131072, 7, 0, 131073, 11, 0, 131074, 11, 0, 131075, 11, 0 )
+
+[node name="Robot" parent="Ground/Objects" index="0"]
+position = Vector2( -547, 134 )
+moves = [ Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ) ]
+
+[node name="Player" parent="Ground/Objects" index="1"]
+position = Vector2( 250, 129 )
+
+[node name="Dancer" parent="Ground/Objects" index="2" instance=ExtResource( 2 )]
+position = Vector2( -259, 239 )
+
+[node name="Dancer2" parent="Ground/Objects" index="3" instance=ExtResource( 2 )]
+position = Vector2( -151, 41 )
+
+[node name="Dancer3" parent="Ground/Objects" index="4" instance=ExtResource( 2 )]
+position = Vector2( 47, 44 )
+
+[node name="Dancer4" parent="Ground/Objects" index="5" instance=ExtResource( 2 )]
+position = Vector2( -146, 244 )
+
+[editable path="UI/UI"]
+[editable path="UI/UI/SfxOption"]
+[editable path="UI/UI/MusicOption"]
+[editable path="UI/UI/Help"]
+[editable path="Ground"]

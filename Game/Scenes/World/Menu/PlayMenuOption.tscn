@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Scenes/World/Menu/MenuOption.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Scenes/World/Menu/star.png" type="Texture" id=2]
+[ext_resource path="res://Game/Scenes/World/Menu/SubLabel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Scenes/World/Menu/PlayMenuOption.gd" type="Script" id=4]
+
+[node name="PlayMenuOption" instance=ExtResource( 1 )]
+margin_right = 283.0
+margin_bottom = 147.0
+custom_constants/separation = -25
+script = ExtResource( 4 )
+
+[node name="Buffer" parent="." index="0"]
+margin_right = 283.0
+margin_bottom = 44.0
+
+[node name="Label" parent="." index="1"]
+margin_top = 19.0
+margin_right = 283.0
+margin_bottom = 128.0
+size_flags_vertical = 0
+
+[node name="Sub" parent="." index="2"]
+margin_top = 103.0
+margin_right = 283.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Sub" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Sub/HBoxContainer" index="0"]
+margin_right = 154.0
+margin_bottom = 55.0
+custom_constants/separation = -2
+
+[node name="Star" type="TextureRect" parent="Sub/HBoxContainer/HBoxContainer" index="0"]
+margin_right = 50.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 50, 0 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="SubLabel" parent="Sub/HBoxContainer/HBoxContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 48.0
+margin_top = 0.0
+margin_right = 154.0
+margin_bottom = 55.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "12/12"
+valign = 1
+
+[node name="Buffer2" type="Control" parent="Sub/HBoxContainer" index="1"]
+margin_left = 158.0
+margin_right = 267.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+
+[node name="Buffer3" type="Control" parent="Sub/HBoxContainer" index="2"]
+margin_left = 271.0
+margin_right = 283.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 12, 12 )

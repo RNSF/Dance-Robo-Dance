@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Scenes/World/World.tscn" type="PackedScene" id=1]
+
+[node name="Level1" instance=ExtResource( 1 )]
+level = 1
+
+[node name="Ground" parent="." index="2"]
+tile_data = PoolIntArray( 65531, 5, 262144, 65532, 5, 262145, 65533, 5, 262145, 65534, 5, 262146, 65535, 7, 0, 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 14, 0 )
+
+[node name="Robot" parent="Ground/Objects" index="0"]
+position = Vector2( -151, 48 )
+moves = [ Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ) ]
+
+[node name="Player" parent="Ground/Objects" index="1"]
+position = Vector2( -352, 45 )
+
+[editable path="UI/UI"]
+[editable path="UI/UI/SfxOption"]
+[editable path="UI/UI/MusicOption"]
+[editable path="UI/UI/Help"]
+[editable path="Ground"]

@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Game/Scenes/GroundObjects/GroundObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Scenes/GroundObjects/Block/Sprites/SideL.png" type="Texture" id=2]
+[ext_resource path="res://Game/Scenes/GroundObjects/Block/Sprites/Main.png" type="Texture" id=3]
+[ext_resource path="res://Game/Scenes/GroundObjects/Block/Sprites/B.png" type="Texture" id=4]
+[ext_resource path="res://Game/Scenes/GroundObjects/Block/BlockSegment.gd" type="Script" id=5]
+[ext_resource path="res://Game/Scenes/GroundObjects/Block/Sprites/TL.png" type="Texture" id=6]
+[ext_resource path="res://Game/Scenes/GroundObjects/Block/Sprites/L.png" type="Texture" id=7]
+[ext_resource path="res://Game/Scenes/Sound.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide2.wav" type="AudioStream" id=9]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide1.wav" type="AudioStream" id=10]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide4.wav" type="AudioStream" id=11]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide5.wav" type="AudioStream" id=12]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide3.wav" type="AudioStream" id=13]
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Side.png-4a6fbcde7c964ecab5053e6959a52d66.stex"
+
+[node name="BlockSegment" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+type_id = "Block"
+pushable_by = [ "Player" ]
+cant_be_pushed_on = [ "Break", "Exit" ]
+
+[node name="Sprites" parent="." index="1"]
+position = Vector2( 0, -50 )
+
+[node name="Main" type="Sprite" parent="Sprites" index="0"]
+texture = ExtResource( 3 )
+
+[node name="Side" type="Sprite" parent="Sprites/Main" index="0"]
+show_behind_parent = true
+position = Vector2( 0, 50 )
+texture = SubResource( 2 )
+
+[node name="10" type="Sprite" parent="Sprites" index="1"]
+visible = false
+position = Vector2( 40, 0 )
+texture = ExtResource( 7 )
+
+[node name="Side" type="Sprite" parent="Sprites/10" index="0"]
+show_behind_parent = true
+position = Vector2( 0, 50 )
+texture = ExtResource( 2 )
+
+[node name="-10" type="Sprite" parent="Sprites" index="2"]
+visible = false
+position = Vector2( -40, 0 )
+texture = ExtResource( 7 )
+
+[node name="Side" type="Sprite" parent="Sprites/-10" index="0"]
+show_behind_parent = true
+position = Vector2( 0, 50 )
+texture = ExtResource( 2 )
+
+[node name="01" type="Sprite" parent="Sprites" index="3"]
+visible = false
+position = Vector2( 0, 40 )
+texture = ExtResource( 4 )
+
+[node name="0-1" type="Sprite" parent="Sprites" index="4"]
+visible = false
+position = Vector2( 0, -40 )
+texture = ExtResource( 4 )
+
+[node name="-1-1" type="Sprite" parent="Sprites" index="5"]
+visible = false
+position = Vector2( -40, -40 )
+texture = ExtResource( 6 )
+
+[node name="-11" type="Sprite" parent="Sprites" index="6"]
+visible = false
+position = Vector2( -40, 40 )
+texture = ExtResource( 6 )
+
+[node name="1-1" type="Sprite" parent="Sprites" index="7"]
+visible = false
+position = Vector2( 40, -40 )
+texture = ExtResource( 6 )
+
+[node name="11" type="Sprite" parent="Sprites" index="8"]
+visible = false
+position = Vector2( 40, 40 )
+texture = ExtResource( 6 )
+
+[node name="Sound" parent="." index="2" instance=ExtResource( 8 )]
+
+[node name="Move0" type="AudioStreamPlayer" parent="Sound" index="0"]
+stream = ExtResource( 10 )
+pitch_scale = 0.61
+bus = "SFX"
+
+[node name="Move1" type="AudioStreamPlayer" parent="Sound" index="1"]
+stream = ExtResource( 9 )
+pitch_scale = 0.61
+bus = "SFX"
+
+[node name="Move2" type="AudioStreamPlayer" parent="Sound" index="2"]
+stream = ExtResource( 13 )
+pitch_scale = 0.61
+bus = "SFX"
+
+[node name="Move3" type="AudioStreamPlayer" parent="Sound" index="3"]
+stream = ExtResource( 11 )
+pitch_scale = 0.61
+bus = "SFX"
+
+[node name="Move4" type="AudioStreamPlayer" parent="Sound" index="4"]
+stream = ExtResource( 12 )
+pitch_scale = 0.61
+bus = "SFX"

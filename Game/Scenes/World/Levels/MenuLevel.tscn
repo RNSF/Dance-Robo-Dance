@@ -1,0 +1,279 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Game/Scenes/World/World.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Scenes/World/Menu/Logo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Scenes/World/Menu/Wowie.png" type="Texture" id=3]
+[ext_resource path="res://Game/Scenes/World/Menu/Jam.png" type="Texture" id=4]
+[ext_resource path="res://Game/Scenes/World/Menu/QuitMenuOption.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Scenes/World/Menu/PlayMenuOption.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Scenes/World/Levels/MenuLevel.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("../Menu:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("../Menu:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("../Menu:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("../Menu:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(":modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(":modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath(":modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath(":modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "ShowMenu"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("../Menu:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.4, 1.9 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("../Menu:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.4, 1.9 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("../Menu:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.4, 1.9 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("../Menu:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.2, 1.4, 1.9 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(":modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.2, 1.7 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(":modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.2, 1.7 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath(":modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.2, 1.7 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath(":modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.2, 1.7 )
+}
+
+[node name="MenuLevel" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
+level = -1
+
+[node name="Camera" parent="." index="0"]
+zoom = Vector2( 1.5, 1.5 )
+
+[node name="UI" parent="UI" index="0"]
+visible = false
+
+[node name="RobotMoves" parent="UI/UI" index="0"]
+visible = false
+
+[node name="Ground" parent="." index="2"]
+tile_data = PoolIntArray( -1572865, 7, 0, -851964, 7, 0, -720897, 7, 0, -786432, 7, 0, -786429, 7, 0, -786424, 7, 0, -786423, 7, 0, -786421, 7, 0, -786420, 7, 0, -655362, 7, 0, -655361, 7, 0, -720894, 7, 0, -720893, 7, 0, -720892, 7, 0, -720891, 7, 0, -720890, 7, 0, -720889, 7, 0, -720888, 7, 0, -720887, 7, 0, -720886, 7, 0, -720884, 7, 0, -720883, 7, 0, -589826, 7, 0, -589825, 7, 0, -655359, 7, 0, -655358, 7, 0, -655357, 7, 0, -655356, 7, 0, -655355, 7, 0, -655354, 7, 0, -655353, 7, 0, -655352, 7, 0, -655351, 7, 0, -655350, 7, 0, -655347, 7, 0, -589824, 7, 0, -589823, 7, 0, -589822, 7, 0, -589821, 7, 0, -589819, 7, 0, -589818, 7, 0, -589817, 7, 0, -589816, 7, 0, -589815, 7, 0, -589814, 7, 0, -458753, 7, 0, -524288, 7, 0, -524287, 7, 0, -524286, 7, 0, -524285, 7, 0, -524282, 7, 0, -524281, 7, 0, -524280, 7, 0, -524279, 7, 0, -524278, 7, 0, -524277, 7, 0, -393217, 7, 0, -458752, 7, 0, -458751, 7, 0, -458750, 7, 0, -458749, 7, 0, -458748, 7, 0, -458746, 7, 0, -458745, 7, 0, -458744, 7, 0, -458743, 7, 0, -393216, 7, 0, -393215, 7, 0, -393212, 7, 0, -393211, 7, 0, -393210, 7, 0, -393209, 7, 0, -393207, 7, 0, -327680, 7, 0, -327679, 7, 0, -327674, 7, 0, -327669, 7, 0, -196609, 7, 0, -196604, 5, 262147, -65554, 7, 0, -131044, 7, 0, -65532, 5, 262147, 65540, 5, 262147, 851967, 7, 0 )
+menu_mode = true
+
+[node name="Robot" parent="Ground/Objects" index="0"]
+position = Vector2( -1745, -156 )
+moves = [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+
+[node name="Player" parent="Ground/Objects" index="1"]
+position = Vector2( 450, -260 )
+speed = 2
+
+[node name="Logo" parent="." index="4" instance=ExtResource( 2 )]
+
+[node name="Menu" type="Control" parent="." index="5"]
+margin_left = 323.0
+margin_top = -451.0
+margin_right = 1089.0
+margin_bottom = 379.0
+
+[node name="PlayMenuOption" parent="Menu" index="0" instance=ExtResource( 6 )]
+margin_left = 205.0
+margin_top = 85.0
+margin_right = 488.0
+margin_bottom = 232.0
+relevant_levels = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+
+[node name="ChallengeMenuOption" parent="Menu" index="1" instance=ExtResource( 6 )]
+margin_left = 205.0
+margin_top = 282.0
+margin_right = 610.0
+margin_bottom = 429.0
+relevant_levels = [ 101, 102 ]
+
+[node name="Buffer" parent="Menu/ChallengeMenuOption" index="0"]
+margin_right = 405.0
+
+[node name="Label" parent="Menu/ChallengeMenuOption" index="1"]
+margin_right = 405.0
+text = "Challenge"
+
+[node name="Sub" parent="Menu/ChallengeMenuOption" index="2"]
+margin_right = 405.0
+
+[node name="Buffer2" parent="Menu/ChallengeMenuOption/Sub/HBoxContainer" index="1"]
+margin_right = 389.0
+
+[node name="Buffer3" parent="Menu/ChallengeMenuOption/Sub/HBoxContainer" index="2"]
+margin_left = 393.0
+margin_right = 405.0
+
+[node name="QuitMenuOption" parent="Menu" index="2" instance=ExtResource( 5 )]
+margin_left = 206.0
+margin_top = 477.0
+margin_right = 489.0
+margin_bottom = 624.0
+
+[node name="Wowie" type="Sprite" parent="." index="6"]
+visible = false
+position = Vector2( 173, 130 )
+rotation = -0.0898644
+scale = Vector2( 0.154925, 0.154925 )
+texture = ExtResource( 3 )
+
+[node name="Jam" type="Sprite" parent="Wowie" index="0"]
+position = Vector2( -891, 275 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Wowie" index="1"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+root_node = NodePath("../Logo")
+autoplay = "ShowMenu"
+anims/RESET = SubResource( 1 )
+anims/ShowMenu = SubResource( 2 )
+
+[connection signal="player_position_changed" from="Ground" to="." method="_on_Ground_player_position_changed"]
+[connection signal="chosen" from="Menu/PlayMenuOption" to="." method="_on_PlayMenuOption_chosen"]
+[connection signal="chosen" from="Menu/ChallengeMenuOption" to="." method="_on_ChallengeMenuOption_chosen"]
+[connection signal="chosen" from="Menu/QuitMenuOption" to="." method="_on_QuitMenuOption_chosen"]
+
+[editable path="UI/UI"]
+[editable path="UI/UI/SfxOption"]
+[editable path="UI/UI/MusicOption"]
+[editable path="UI/UI/Help"]
+[editable path="Ground"]
+[editable path="Menu/ChallengeMenuOption"]

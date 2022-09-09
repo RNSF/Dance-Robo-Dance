@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cardSlide5.wav-efdb08a619029f4ac589cf82f4f246c1.sample"
+
+[deps]
+
+source_file="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide5.wav"
+dest_files=[ "res://.import/cardSlide5.wav-efdb08a619029f4ac589cf82f4f246c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

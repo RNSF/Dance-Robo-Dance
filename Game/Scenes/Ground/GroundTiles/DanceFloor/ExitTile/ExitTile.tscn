@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Scenes/Ground/GroundTiles/DanceFloor/DanceFloorTile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Scenes/Ground/GroundTiles/DanceFloor/ExitTile/ExitTile.gd" type="Script" id=2]
+[ext_resource path="res://Game/Scenes/Ground/GroundTiles/DanceFloor/ExitTile/DoorBody.png" type="Texture" id=3]
+[ext_resource path="res://Game/Scenes/Ground/GroundTiles/DanceFloor/ExitTile/DoorFrame.png" type="Texture" id=4]
+
+[node name="ExitTile" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 1 )
+script = ExtResource( 2 )
+
+[node name="Door" type="Node2D" parent="." index="1"]
+position = Vector2( 0, -15 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="DoorBody" type="Sprite" parent="Door" index="0"]
+self_modulate = Color( 0.0666667, 0, 0.305882, 1 )
+position = Vector2( 0, 8 )
+scale = Vector2( 0.985915, 1 )
+texture = ExtResource( 3 )
+
+[node name="DoorFrame" type="Sprite" parent="Door" index="1"]
+self_modulate = Color( 1, 0.827451, 0.729412, 1 )
+texture = ExtResource( 4 )

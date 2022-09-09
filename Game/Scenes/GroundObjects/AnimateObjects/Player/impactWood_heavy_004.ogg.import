@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impactWood_heavy_004.ogg-914b1d24fe13c4193bffb2e0253daad7.oggstr"
+
+[deps]
+
+source_file="res://Game/Scenes/GroundObjects/AnimateObjects/Player/impactWood_heavy_004.ogg"
+dest_files=[ "res://.import/impactWood_heavy_004.ogg-914b1d24fe13c4193bffb2e0253daad7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

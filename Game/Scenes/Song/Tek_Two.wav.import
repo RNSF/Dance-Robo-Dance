@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tek_Two.wav-ce3425a9c4e8043ab464934246ae193b.sample"
+
+[deps]
+
+source_file="res://Game/Scenes/Song/Tek_Two.wav"
+dest_files=[ "res://.import/Tek_Two.wav-ce3425a9c4e8043ab464934246ae193b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,308 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Game/Scenes/GroundObjects/GroundObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/AnimateObject.gd" type="Script" id=2]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Sprites/Dance1.png" type="Texture" id=3]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/OutlineShader.gdshader" type="Shader" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://Game/Scenes/Sound.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide2.wav" type="AudioStream" id=7]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide4.wav" type="AudioStream" id=9]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide5.wav" type="AudioStream" id=11]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/cardSlide3.wav" type="AudioStream" id=12]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/impactWood_heavy_004.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/impactWood_heavy_002.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/impactWood_heavy_001.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/impactWood_heavy_003.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Game/Scenes/GroundObjects/AnimateObjects/Player/impactWood_heavy_000.ogg" type="AudioStream" id=18]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 4 )
+shader_param/outline_color = Color( 0.0666667, 0, 0.305882, 1 )
+shader_param/active = true
+
+[sub_resource type="Animation" id=5]
+resource_name = "Bop"
+length = 0.3
+step = 0.005
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprites:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.02, 0.00643337, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sprites:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.015, -0.473991, 0.8, -0.01, 0, 0.12, -0.00470334, 1, -0.16, -0.0118151, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.3 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sprites:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.3 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Sprites:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.005, 8.17847, 5, -0.03, -0.376052, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.3 )
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.04 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "update_bop_move"
+} ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Dance"
+length = 0.3
+step = 0.005
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprites:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.02, 0.00643337, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sprites:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.015, -0.473991, 0.5, -0.01, 0, 0.12, -0.00470334, 1, -0.16, -0.0118151, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.3 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sprites:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.3 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Sprites:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.005, 8.17847, 15, -0.03, -0.376052, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.3 )
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.04 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "update_dance_move"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprites:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sprites:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sprites:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Sprites:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="AnimateObject" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="DanceSprite" type="Sprite" parent="Sprites" index="0"]
+material = SubResource( 4 )
+position = Vector2( 5.96046e-08, -14 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+anims/Bop = SubResource( 5 )
+anims/Dance = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="HeadPositions" type="Node2D" parent="." index="3"]
+
+[node name="Icon" type="Sprite" parent="HeadPositions" index="0"]
+visible = false
+position = Vector2( 7.07805e-08, -36 )
+rotation = 0.0237159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Icon2" type="Sprite" parent="HeadPositions" index="1"]
+visible = false
+position = Vector2( 20, -35 )
+rotation = 0.382549
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Icon3" type="Sprite" parent="HeadPositions" index="2"]
+visible = false
+position = Vector2( -4, -36 )
+rotation = 0.15259
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Icon4" type="Sprite" parent="HeadPositions" index="3"]
+visible = false
+position = Vector2( -1, -45 )
+rotation = -0.184763
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Icon5" type="Sprite" parent="HeadPositions" index="4"]
+visible = false
+position = Vector2( -2, -37 )
+rotation = 0.145952
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Icon6" type="Sprite" parent="HeadPositions" index="5"]
+visible = false
+position = Vector2( 4.84288e-08, -37 )
+rotation = -0.0464468
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Icon7" type="Sprite" parent="HeadPositions" index="6"]
+visible = false
+position = Vector2( 7, -39 )
+rotation = 0.136186
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Icon8" type="Sprite" parent="HeadPositions" index="7"]
+visible = false
+position = Vector2( -2, -32 )
+rotation = -0.0517052
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="MoveSound" parent="." index="4" instance=ExtResource( 6 )]
+
+[node name="Step0" type="AudioStreamPlayer" parent="MoveSound" index="0"]
+stream = ExtResource( 8 )
+volume_db = -8.667
+bus = "SFX"
+
+[node name="Step1" type="AudioStreamPlayer" parent="MoveSound" index="1"]
+stream = ExtResource( 7 )
+volume_db = -8.667
+bus = "SFX"
+
+[node name="Step2" type="AudioStreamPlayer" parent="MoveSound" index="2"]
+stream = ExtResource( 12 )
+volume_db = -8.667
+bus = "SFX"
+
+[node name="Step3" type="AudioStreamPlayer" parent="MoveSound" index="3"]
+stream = ExtResource( 9 )
+volume_db = -8.667
+bus = "SFX"
+
+[node name="Step4" type="AudioStreamPlayer" parent="MoveSound" index="4"]
+stream = ExtResource( 11 )
+volume_db = -8.667
+bus = "SFX"
+
+[node name="Bounce0" type="AudioStreamPlayer" parent="MoveSound" index="5"]
+stream = ExtResource( 18 )
+volume_db = 3.0
+bus = "SFX"
+
+[node name="Bounce1" type="AudioStreamPlayer" parent="MoveSound" index="6"]
+stream = ExtResource( 16 )
+volume_db = 3.0
+bus = "SFX"
+
+[node name="Bounce2" type="AudioStreamPlayer" parent="MoveSound" index="7"]
+stream = ExtResource( 15 )
+volume_db = 3.0
+bus = "SFX"
+
+[node name="Bounce3" type="AudioStreamPlayer" parent="MoveSound" index="8"]
+stream = ExtResource( 17 )
+volume_db = 3.0
+bus = "SFX"
+
+[node name="Bounce4" type="AudioStreamPlayer" parent="MoveSound" index="9"]
+stream = ExtResource( 14 )
+volume_db = 3.0
+bus = "SFX"

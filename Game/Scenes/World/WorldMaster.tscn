@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game/Scenes/World/WorldMaster.gd" type="Script" id=1]
+[ext_resource path="res://Game/Scenes/Song/Song.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Scenes/Song/Tech_One.wav" type="AudioStream" id=3]
+[ext_resource path="res://Game/Scenes/Song/Tech_Two.wav" type="AudioStream" id=4]
+[ext_resource path="res://Game/Scenes/Song/Tek_One.wav" type="AudioStream" id=5]
+[ext_resource path="res://Game/Scenes/Song/Tek_Two.wav" type="AudioStream" id=6]
+
+[node name="WorldMaster" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="BeatTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Songs" type="Node" parent="."]
+
+[node name="Techno" parent="Songs" instance=ExtResource( 2 )]
+
+[node name="Tech" parent="Songs" instance=ExtResource( 2 )]
+bpm = 148.0
+
+[node name="Dance" parent="Songs/Tech" index="0"]
+stream = ExtResource( 3 )
+
+[node name="Low" parent="Songs/Tech" index="1"]
+stream = ExtResource( 4 )
+
+[node name="Tek" parent="Songs" instance=ExtResource( 2 )]
+bpm = 128.0
+
+[node name="Dance" parent="Songs/Tek" index="0"]
+stream = ExtResource( 5 )
+
+[node name="Low" parent="Songs/Tek" index="1"]
+stream = ExtResource( 6 )
+
+[connection signal="timeout" from="BeatTimer" to="." method="_on_BeatTimer_timeout"]
+[connection signal="beat" from="Songs/Techno" to="." method="_on_Song_beat"]
+[connection signal="beat" from="Songs/Tech" to="." method="_on_Song_beat"]
+[connection signal="beat" from="Songs/Tek" to="." method="_on_Song_beat"]
+
+[editable path="Songs/Techno"]
+[editable path="Songs/Tech"]
+[editable path="Songs/Tek"]
